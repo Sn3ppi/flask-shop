@@ -1,4 +1,3 @@
-from http.client import HTTPResponse
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 import os

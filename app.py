@@ -44,12 +44,12 @@ def index():
     return render_template('index.html', data=items)
 
 
-@app.route('/about')
+@app.route('/about/')
 def about():
     return render_template('about.html')
 
 
-@app.route('/buy/<int:id>')
+@app.route('/buy/<int:id>/')
 def buy_product(id):
     item = Shop.query.get(id)
     payment = Payment.create({
@@ -67,7 +67,7 @@ def buy_product(id):
     return redirect(payment.confirmation.confirmation_url)
 
 
-@app.route('/new_product', methods=['POST', 'GET'])
+@app.route('/new_product/', methods=['POST', 'GET'])
 def new_product():
     if request.method == "POST":
         title = request.form['title']
@@ -84,4 +84,4 @@ def new_product():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=15000, debug=True)

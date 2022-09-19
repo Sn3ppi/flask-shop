@@ -1,9 +1,11 @@
+import os
+
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-import os
 from dotenv import load_dotenv
 import uuid
 from yookassa import Configuration, Payment
+
 
 
 dotenv_path = os.path.join(os.path.dirname(__file__), 'shop.env')
